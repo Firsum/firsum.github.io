@@ -1,4 +1,16 @@
-/* --- Base Styles & Variables --- */
+/* --- CSS Variables for Easy Customization --- */
+:root {
+    --accent-color: #ff5e3a;        /* Main brand color */
+    --accent-hover: #e04a2b;         /* Darker shade for hover */
+    --dark-bg: #1a1a1a;              /* Hero background */
+    --light-bg: #f8f8f8;              /* Stats & cards background */
+    --text-dark: #1e1e1e;
+    --text-medium: #4a4a4a;
+    --text-light: #a0a0a0;
+    --border-color: #eaeaea;
+}
+
+/* --- Base Styles --- */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +20,7 @@
 body {
     font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: #ffffff;
-    color: #1e1e1e;
+    color: var(--text-dark);
     line-height: 1.6;
     scroll-behavior: smooth;
 }
@@ -33,7 +45,7 @@ h2 {
     max-width: 700px;
     margin: 0 auto;
     font-size: 1.2rem;
-    color: #4a4a4a;
+    color: var(--text-medium);
 }
 
 /* --- Navbar --- */
@@ -65,18 +77,18 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff5e3a;
+    color: var(--accent-color);
 }
 
 .logo {
-    color: #ff5e3a;
+    color: var(--accent-color);
     font-weight: 700;
     font-size: 1.8rem;
 }
 
 /* --- Hero Section --- */
 .hero {
-    background: #1a1a1a;
+    background: var(--dark-bg);
     color: white;
     padding: 120px 0;
     text-align: left;
@@ -87,7 +99,7 @@ nav ul li a:hover {
 }
 
 .hero-subtitle {
-    color: #a0a0a0;
+    color: var(--text-light);
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -102,8 +114,8 @@ nav ul li a:hover {
 }
 
 .hero-title span {
-    color: #ff5e3a;
-    border-bottom: 4px solid #ff5e3a;
+    color: var(--accent-color);
+    border-bottom: 4px solid var(--accent-color);
     display: inline-block;
     padding-bottom: 5px;
 }
@@ -112,7 +124,7 @@ nav ul li a:hover {
     display: inline-block;
     margin-top: 30px;
     padding: 15px 40px;
-    background: #ff5e3a;
+    background: var(--accent-color);
     color: white;
     text-decoration: none;
     font-weight: 600;
@@ -122,15 +134,15 @@ nav ul li a:hover {
 }
 
 .btn:hover {
-    background: #e04a2b;
+    background: var(--accent-hover);
     transform: translateY(-3px);
 }
 
 /* --- Stats Section --- */
 .stats-section {
-    background: #f8f8f8;
+    background: var(--light-bg);
     padding: 50px 0;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .stats-grid {
@@ -148,15 +160,36 @@ nav ul li a:hover {
 .stat-number {
     font-size: 3rem;
     font-weight: 800;
-    color: #ff5e3a;
+    color: var(--accent-color);
     line-height: 1.2;
 }
 
 .stat-label {
     font-size: 1rem;
-    color: #4a4a4a;
+    color: var(--text-medium);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* --- About Section with Image --- */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--text-medium);
 }
 
 /* --- Services Section --- */
@@ -168,7 +201,7 @@ nav ul li a:hover {
 }
 
 .service-card {
-    background: #f8f8f8;
+    background: var(--light-bg);
     padding: 40px 30px;
     text-align: left;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -180,15 +213,21 @@ nav ul li a:hover {
     box-shadow: 0 20px 30px rgba(0,0,0,0.1);
 }
 
+.service-card i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
 .service-card h3 {
     font-size: 1.8rem;
     margin-bottom: 15px;
-    color: #1e1e1e;
+    color: var(--text-dark);
     font-weight: 700;
 }
 
 .service-card p {
-    color: #4a4a4a;
+    color: var(--text-medium);
 }
 
 /* --- Projects Section --- */
@@ -202,7 +241,7 @@ nav ul li a:hover {
 .project-card {
     background: white;
     padding: 30px;
-    border: 1px solid #eaeaea;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: left;
@@ -211,22 +250,22 @@ nav ul li a:hover {
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    border-color: #ff5e3a;
+    border-color: var(--accent-color);
 }
 
 .project-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #1e1e1e;
+    color: var(--text-dark);
 }
 
 .project-card p {
-    color: #4a4a4a;
+    color: var(--text-medium);
 }
 
 /* --- Contact Section --- */
 .contact-section {
-    background: #f8f8f8;
+    background: var(--light-bg);
     text-align: center;
 }
 
@@ -240,18 +279,25 @@ nav ul li a:hover {
 .contact-btn {
     text-decoration: none;
     color: white;
-    background: #1e1e1e;
+    background: var(--text-dark);
     padding: 12px 30px;
     border-radius: 5px;
     font-weight: 600;
     transition: background-color 0.3s, transform 0.3s;
     border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .contact-btn:hover {
-    background: #ff5e3a;
+    background: var(--accent-color);
     color: white;
     transform: scale(1.05);
+}
+
+.contact-btn i {
+    font-size: 1.2rem;
 }
 
 /* --- Footer --- */
@@ -289,5 +335,15 @@ footer {
 
     nav ul {
         justify-content: center;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-image {
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
